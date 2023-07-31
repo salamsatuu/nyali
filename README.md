@@ -1,8 +1,7 @@
 ### ORDER AUTOSCRIPT/IZIN IP
+![Logo](https://xlordstore.com/IMG_20230706_125109_689.jpg)
 - PRICELIST
 ```
-![Logo](https://xlordstore.com/IMG_20230706_125109_689.jpg)
-
 HARGA SEWA AUTOSCRIPT 
 1 Bulan : 10K
 2 Bulan : 20K
