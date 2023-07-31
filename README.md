@@ -25,16 +25,18 @@ Source : 600K Nego
 
 
 ### TESTED ON OS 
-- UBUNTU 20.04.05
-- DEBIAN 10
+- UBUNTU 20.04
+- DEBIAN 10x64 
 
 ### FITUR TAMBAHAN
+```
 - Atur Limit Quota Per Akun
 - Atur Limit IP Per Akun
 - SlowDNS & SSH UDP
 - Xray Core by [@dharak36](https://github.com/dharak36/Xray-core)
 - Penambahan fail2ban
 - Auto block sebagian ads indo by default
+```
 
 ### PORT INFO
 ```
