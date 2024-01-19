@@ -3,38 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pembayaran QRIS</title>
+    <title>QRIS Transaction</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
-        #qrCode {
-            max-width: 80%;
-            margin: 20px auto;
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .transaction-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1>Scan QR Code untuk Pembayaran</h1>
-    
-    <div id="qrCode">
-        <!-- Tambahkan gambar QR Code di sini -->
-        <img src="https://xlordstore.com/IMG_20230729_125653_683.jpg" alt="QR Code">
+    <div class="container">
+        <h2>SCAN KODE QRIS DIBAWAH INI</h2>
+        <img src="https://xlordstore.com/IMG_20230729_125653_683.jpg" alt="QRIS Code">
+        <p>Scan the QR code to initiate the transaction.</p>
+        <button class="transaction-btn">Complete Transaction</button>
     </div>
-
-    <script>
-        // Tambahkan skrip JavaScript untuk menangani pemindaian QR Code
-        function handleQRScan() {
-            // Implementasikan logika pemindaian QR Code di sini
-            alert('QR Code berhasil dipindai. Proses pembayaran...');
-        }
-    </script>
-
-    <!-- Tambahkan library QR Code scanner, contohnya: https://github.com/cozmo/jsQR -->
-    <script src="jsQR.js"></script>
-
-    <button onclick="handleQRScan()">Pindai QR Code</button>
 </body>
 </html>
-
