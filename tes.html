@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAI NGAPAIN CUY</title>
+    <title>XlordStore Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
+            margin: 0;
         }
-
         .login-container {
             background-color: #fff;
             padding: 20px;
@@ -22,45 +21,47 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-
-        .logo {
-            max-width: 100px;
+        .input-group {
             margin-bottom: 20px;
         }
-
-        .login-form input {
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .input-group input {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 8px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-
-        .login-form button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        .remember-me {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <img src="https://xlordstore.com/IMG_20230706_125109_689.jpg" alt="Store Logo" class="logo">
-        <div class="login-form">
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
-                 
- <input><label><input type="checkbox"name="remember" value="remember" />Remember me</label>
-  </p>
-  <p>
-            </p>
-            <button type="submit">Login</button>
-         </fieldset>
- </form>
- 
+        <h1>XlordStore Login</h1>
+        <form action="process-login.php" method="post">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="remember-me">
+                <label>
+                    <input type="checkbox" name="remember"> Remember Me
+                </label>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
