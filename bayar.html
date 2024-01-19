@@ -2,49 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QRIS Transaction</title>
+    <title>Pembayaran QRIS</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background-color: #fff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        img {
+        #qrisImage {
             max-width: 100%;
             height: auto;
-            margin-bottom: 20px;
         }
 
-        .transaction-btn {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #3498db;
+        #whatsappLink {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
             color: #fff;
-            border: none;
+            background-color: #25d366;
+            padding: 10px 15px;
             border-radius: 5px;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>SCAN KODE QRIS DIBAWAH INI</h2>
-        <img src="https://xlordstore.com/IMG_20230729_125653_683.jpg" alt="QRIS Code">
-        <p>Scan the QR code to initiate the transaction.</p>
-        <button class="transaction-btn">Complete Transaction</button>
-    </div>
+    <h1>Pembayaran QRIS</h1>
+    <p>Scan QR Code di bawah untuk melakukan pembayaran:</p>
+    <img id="qrisImage" src="ganti" alt="QR Code Pembayaran">
+
+    <p>Setelah pembayaran, konfirmasi melalui WhatsApp:</p>
+    <a id="whatsappLink" href="https://wa.me/62881036683241?text=Aku%20sudah%20bayar%20bang%20(sertakan%20bukti)">
+        Konfirmasi Pembayaran di WhatsApp
+    </a>
 </body>
 </html>
