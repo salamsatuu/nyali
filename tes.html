@@ -4,85 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>XlordStore - Toko Online</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
 
-        .login-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-
-        .login-container h2 {
+        header {
+            background-color: #333;
+            color: #fff;
             text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            margin: 2em;
+        }
+
+        h1 {
             color: #333;
         }
 
-        .login-form {
-            margin-top: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
+        p {
+            line-height: 1.6;
             color: #555;
         }
 
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .form-group button {
-            width: 100%;
-            padding: 10px;
-            background-color: #3498db;
+        footer {
+            background-color: #333;
             color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .form-group button:hover {
-            background-color: #2186c9;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form class="login-form">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <button type="submit">Login</button>
-            </div>
-        </form>
-    </div>
+    <header>
+        <h1>XlordStore - Toko Online</h1>
+    </header>
+
+    <section>
+        <h2>Selamat datang di XlordStore</h2>
+        <p>Selamat berbelanja di toko online kami yang menyediakan berbagai produk berkualitas.</p>
+    </section>
+
+    <section>
+        <h2>Biodata Toko</h2>
+        <p><strong>Alamat:</strong> Jl. Contoh No. 123, Kota Contoh</p>
+        <p><strong>Email:</strong> xlordstore@example.com</p>
+        <p><strong>Telepon:</strong> (0123) 456-789</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 XlordStore - Toko Online</p>
+    </footer>
 </body>
 
 </html>
