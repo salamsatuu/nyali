@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran QRIS</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        #qrCode {
+            max-width: 80%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scan QR Code untuk Pembayaran</h1>
+    
+    <div id="qrCode">
+        <!-- Tambahkan gambar QR Code di sini -->
+        <img src="gambar_qr_code.png" alt="QR Code">
+    </div>
+
+    <script>
+        // Tambahkan skrip JavaScript untuk menangani pemindaian QR Code
+        function handleQRScan() {
+            // Implementasikan logika pemindaian QR Code di sini
+            alert('QR Code berhasil dipindai. Proses pembayaran...');
+        }
+    </script>
+
+    <!-- Tambahkan library QR Code scanner, contohnya: https://github.com/cozmo/jsQR -->
+    <script src="jsQR.js"></script>
+
+    <button onclick="handleQRScan()">Pindai QR Code</button>
+</body>
+</html>
+
