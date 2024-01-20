@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canggih Calculator</title>
+    <title>Kalkulator Mewah</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #282c35;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,44 +17,53 @@
         }
 
         #calculator {
-            background-color: #333;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #1e2228;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             overflow: hidden;
+            width: 300px;
         }
 
         #result {
             color: #fff;
             font-size: 2em;
-            padding: 10px;
+            padding: 15px;
             text-align: right;
         }
 
         #buttons {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 15px;
         }
 
         button {
-            background-color: #666;
+            background-color: #576574;
             border: none;
             color: #fff;
             font-size: 1.5em;
-            padding: 20px;
+            padding: 15px;
             cursor: pointer;
+            border-radius: 8px;
             transition: background-color 0.3s ease;
         }
 
         button:hover {
-            background-color: #444;
+            background-color: #34495e;
         }
 
         button.operator {
-            background-color: #ff6666;
+            background-color: #e74c3c;
         }
 
         button.double {
             grid-column: span 2;
+        }
+
+        button.clear {
+            grid-column: span 3;
+            background-color: #2ecc71;
         }
     </style>
 </head>
@@ -79,6 +88,7 @@
             <button>.</button>
             <button class="operator">+</button>
             <button class="double operator">=</button>
+            <button class="clear">Clear</button>
         </div>
     </div>
 
@@ -97,8 +107,11 @@
                         } catch (error) {
                             result.textContent = 'Error';
                         }
+                    } else if (buttonText === 'Clear') {
+                        result.textContent = '0';
                     } else {
-                        result.textContent += buttonText;
+                        result.textContent =
+                            result.textContent === '0' ? buttonText : result.textContent + buttonText;
                     }
                 }
             });
