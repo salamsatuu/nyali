@@ -1,76 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bucin Ala Xlord</title>
+    <title>Canggih Calculator</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
+            margin: 0;
         }
-        .container {
-            max-width: 400px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        #calculator {
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
-        input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #4caf50;
+
+        #result {
             color: #fff;
-            padding: 10px 15px;
+            font-size: 2em;
+            padding: 10px;
+            text-align: right;
+        }
+
+        #buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        button {
+            background-color: #666;
             border: none;
-            border-radius: 4px;
+            color: #fff;
+            font-size: 1.5em;
+            padding: 20px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        button.operator {
+            background-color: #ff6666;
+        }
+
+        button.double {
+            grid-column: span 2;
         }
     </style>
 </head>
+
 <body>
-
-<div class="container">
-    <h2>XLORD CUMA GABUT</h2>
-    <div class="form-group">
-        <label for="nama">Nama:</label>
-        <input type="text" id="nama" name="nama" required>
+    <div id="calculator">
+        <div id="result">0</div>
+        <div id="buttons">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">/</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">*</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">-</button>
+            <button class="double">0</button>
+            <button>.</button>
+            <button class="operator">+</button>
+            <button class="double operator">=</button>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="pesan">Pesan:</label>
-        <textarea id="pesan" name="pesan" rows="4" required></textarea>
-    </div>
-    <button onclick="kirimPesan()">Kirim Pesan</button>
-</div>
 
-<script>
-    function kirimPesan() {
-        var nama = document.getElementById('nama').value;
-        var pesan = document.getElementById('pesan').value;
-        var nomorWhatsApp = 'NomorWhatsAppTujuan'; // Ganti dengan nomor tujuan
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const result = document.getElementById('result');
+            const buttons = document.getElementById('buttons');
 
-        var url = 'https://api.whatsapp.com/send?phone=' + nomorWhatsApp + '&text=Halo%20' + nama + ',%20' + pesan;
-        window.open(url, '_blank');
-    }
-</script>
+            buttons.addEventListener('click', function (e) {
+                if (e.target.tagName === 'BUTTON') {
+                    const buttonText = e.target.textContent;
 
+                    if (buttonText === '=') {
+                        try {
+                            result.textContent = eval(result.textContent);
+                        } catch (error) {
+                            result.textContent = 'Error';
+                        }
+                    } else {
+                        result.textContent += buttonText;
+                    }
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
