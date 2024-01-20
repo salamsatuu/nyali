@@ -1,63 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bucin Page</title>
-  <style>
-    body {
-      background-color: #ffcccc; /* Warna background cinta */
-      font-family: 'Arial', sans-serif;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #ffffff; /* Warna latar belakang elegan */
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      color: #e60073; /* Warna teks bucin */
-    }
-
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-    }
-
-    button {
-      background-color: #4CAF50; /* Warna tombol hijau */
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #45a049; /* Warna tombol hijau saat hover */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucin Ala Xlord</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Selamat datang di Halaman Bucin</h1>
-    <form action="#" method="post">
-      <label for="nama">Nama yang dituju:</label>
-      <input type="text" id="nama" name="nama" placeholder="Masukkan nama">
-      
-      <label for="whatsapp">Nomor WhatsApp korban:</label>
-      <input type="text" id="whatsapp" name="whatsapp" placeholder="Masukkan nomor WhatsApp">
+<div class="container">
+    <h2>XLORD CUMA GABUT</h2>
+    <div class="form-group">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
+    </div>
+    <div class="form-group">
+        <label for="pesan">Pesan:</label>
+        <textarea id="pesan" name="pesan" rows="4" required></textarea>
+    </div>
+    <button onclick="kirimPesan()">Kirim Pesan</button>
+</div>
 
-      <button type="submit">Kirim Bunga</button>
-    </form>
-    <p>Dengan cinta, <br> Tim Bucin</p>
-  </div>
+<script>
+    function kirimPesan() {
+        var nama = document.getElementById('nama').value;
+        var pesan = document.getElementById('pesan').value;
+        var nomorWhatsApp = 'NomorWhatsAppTujuan'; // Ganti dengan nomor tujuan
+
+        var url = 'https://api.whatsapp.com/send?phone=' + nomorWhatsApp + '&text=Halo%20' + nama + ',%20' + pesan;
+        window.open(url, '_blank');
+    }
+</script>
 
 </body>
 </html>
