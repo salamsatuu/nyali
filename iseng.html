@@ -4,53 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Mewah</title>
+    <title>Canggih Calculator</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #282c35;
+            background-color: #2c3e50;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            color: #ecf0f1;
         }
 
         #calculator {
-            background-color: #1e2228;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #34495e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            width: 300px;
         }
 
         #result {
-            color: #fff;
             font-size: 2em;
-            padding: 15px;
+            padding: 10px;
             text-align: right;
         }
 
         #buttons {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            padding: 15px;
         }
 
         button {
-            background-color: #576574;
+            background-color: #2c3e50;
             border: none;
-            color: #fff;
+            color: #ecf0f1;
             font-size: 1.5em;
-            padding: 15px;
+            padding: 20px;
             cursor: pointer;
-            border-radius: 8px;
             transition: background-color 0.3s ease;
         }
 
         button:hover {
-            background-color: #34495e;
+            background-color: #1f2c38;
         }
 
         button.operator {
@@ -61,9 +57,9 @@
             grid-column: span 2;
         }
 
-        button.clear {
+        button.delete {
             grid-column: span 3;
-            background-color: #2ecc71;
+            background-color: #e67e22;
         }
     </style>
 </head>
@@ -87,8 +83,8 @@
             <button class="double">0</button>
             <button>.</button>
             <button class="operator">+</button>
+            <button class="double operator delete">DEL</button>
             <button class="double operator">=</button>
-            <button class="clear">Clear</button>
         </div>
     </div>
 
@@ -107,19 +103,14 @@
                         } catch (error) {
                             result.textContent = 'Error';
                         }
-                    } else if (buttonText === 'Clear') {
-                        result.textContent = '0';
+                    } else if (buttonText === 'DEL') {
+                        result.textContent = result.textContent.slice(0, -1);
                     } else {
-                        result.textContent =
-                            result.textContent === '0' ? buttonText : result.textContent + buttonText;
+                        result.textContent += buttonText;
                     }
                 }
             });
         });
-    </div>
-
-    <div id="watermark">@2024 xlordstore</div>
-
     </script>
 </body>
 
