@@ -1,67 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To XlordStore</title>
+    <title>BINGUNG JUDUL</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-        }
-        .login-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .input-group {
-            margin-bottom: 20px;
-        }
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        .input-group input {
-            width: 100%;
-            padding: 8px;
+            padding: 0;
             box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
         }
-        .remember-me {
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            justify-content: space-around;
+            background-color: #444;
+            padding: 0.5em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 0.5em 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            padding: 2em;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 400px;
+            text-align: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
         }
     </style>
 </head>
+
 <body>
-    <div class="login-container">
-        <h1>Hi Welcome Gais :v</h1>
-        <form action="process-login.php" method="post">
-            <div class="input-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="remember-me">
-                <label>
-                    <input type="checkbox" name="remember"> Remember Me
-                </label>
-                <button type="submit">Login</button>
-            </div>
-        </form>
-    </div>
+
+    <header>
+        <h1>Website Canggih</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home" class="parallax" style="background-image: url('https://via.placeholder.com/1920x1080');">
+        <h2>Welcome to our website!</h2>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod augue a diam ultrices, vel lacinia urna aliquet.</p>
+    </section>
+
+    <section id="services" class="parallax" style="background-image: url('https://via.placeholder.com/1920x1080');">
+        <h2>Our Services</h2>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@example.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 xlordganteng</p>
+    </footer>
+
 </body>
+
 </html>
