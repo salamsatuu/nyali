@@ -90,32 +90,61 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const result = document.getElementById('result');
-            const buttons = document.getElementById('buttons');
+        let currentInput = '0';
+        let operator = null;
+        let waitingForNextInput = false;
 
-            buttons.addEventListener('click', function (e) {
-                if (e.target.tagName === 'BUTTON') {
-                    const buttonText = e.target.textContent;
+        function updateDisplay() {
+            document.getElementById('result').textContent = currentInput;
+        }
 
-                    if (buttonText === '=') {
-                        try {
-                            result.textContent = eval(result.textContent);
-                        } catch (error) {
-                            result.textContent = 'Error';
-                        }
-                    } else if (buttonText === 'C') {
-                        result.textContent = '0';
-                    } else {
-                        if (result.textContent === '0') {
-                            result.textContent = buttonText;
-                        } else {
-                            result.textContent += buttonText;
-                        }
-                    }
+        function appendNumber(number) {
+            if (waitingForNextInput) {
+                currentInput = number;
+                waitingForNextInput = false;
+            } else {
+                currentInput = currentInput === '0' ? number : currentInput + number;
+            }
+            updateDisplay();
+        }
+
+        function appendDecimal() {
+            if (waitingForNextInput) {
+                currentInput = '0.';
+                waitingForNextInput = false;
+            } else {
+                if (!currentInput.includes('.')) {
+                    currentInput += '.';
                 }
-            });
-        });
+            }
+            updateDisplay();
+        }
+
+        function setOperator(newOperator) {
+            if (operator !== null && !waitingForNextInput) {
+                calculate();
+            }
+            operator = newOperator;
+            waitingForNextInput = true;
+        }
+
+        function calculate() {
+            if (operator !== null) {
+                const prevInput = parseFloat(currentInput);
+                const result = eval(prevInput + operator + prevInput);
+                currentInput = result.toString();
+                operator = null;
+                waitingForNextInput = true;
+                updateDisplay();
+            }
+        }
+
+        function clearResult() {
+            currentInput = '0';
+            operator = null;
+            waitingForNextInput = false;
+            updateDisplay();
+        }
     </script>
 </body>
 
