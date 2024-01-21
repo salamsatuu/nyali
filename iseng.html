@@ -4,27 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canggih Calculator</title>
+    <title>Kalkulator Online</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #2c3e50;
+            font-family: Arial, sans-serif;
+            background-color: #222;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            color: #ecf0f1;
         }
 
         #calculator {
-            background-color: #34495e;
+            background-color: #444;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            max-width: 300px;
+            margin: auto;
         }
 
         #result {
+            color: #fff;
             font-size: 2em;
             padding: 10px;
             text-align: right;
@@ -36,9 +38,9 @@
         }
 
         button {
-            background-color: #2c3e50;
+            background-color: #666;
             border: none;
-            color: #ecf0f1;
+            color: #fff;
             font-size: 1.5em;
             padding: 20px;
             cursor: pointer;
@@ -46,20 +48,19 @@
         }
 
         button:hover {
-            background-color: #1f2c38;
+            background-color: #444;
         }
 
         button.operator {
-            background-color: #e74c3c;
+            background-color: #ff6666;
         }
 
         button.double {
             grid-column: span 2;
         }
 
-        button.delete {
-            grid-column: span 3;
-            background-color: #e67e22;
+        button.clear {
+            background-color: #555;
         }
     </style>
 </head>
@@ -68,23 +69,23 @@
     <div id="calculator">
         <div id="result">0</div>
         <div id="buttons">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="operator">/</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="operator">*</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="operator">-</button>
-            <button class="double">0</button>
-            <button>.</button>
-            <button class="operator">+</button>
-            <button class="double operator delete">DEL</button>
-            <button class="double operator">=</button>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="operator" onclick="setOperator('*')">×</button>
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="operator" onclick="setOperator('/')">÷</button>
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="operator" onclick="setOperator('-')">-</button>
+            <button class="double" onclick="appendNumber('0')">0</button>
+            <button onclick="appendDecimal('.')">.</button>
+            <button class="operator" onclick="setOperator('+')">+</button>
+            <button class="double operator" onclick="calculate()">=</button>
+            <button class="double operator" onclick="clearResult()">C</button>
         </div>
     </div>
 
@@ -103,10 +104,14 @@
                         } catch (error) {
                             result.textContent = 'Error';
                         }
-                    } else if (buttonText === 'DEL') {
-                        result.textContent = result.textContent.slice(0, -1);
+                    } else if (buttonText === 'C') {
+                        result.textContent = '0';
                     } else {
-                        result.textContent += buttonText;
+                        if (result.textContent === '0') {
+                            result.textContent = buttonText;
+                        } else {
+                            result.textContent += buttonText;
+                        }
                     }
                 }
             });
