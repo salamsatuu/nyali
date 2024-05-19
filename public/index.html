@@ -27,7 +27,7 @@
             const expire = document.getElementById('expire').value;
             const ip = document.getElementById('ip').value;
 
-            const response = await fetch('https://your-backend-url/register', { // Ganti 'your-backend-url' dengan URL backend Anda
+            const response = await fetch('http://your_domain/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
