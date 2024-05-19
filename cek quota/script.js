@@ -1,33 +1,27 @@
 // script.js
 $(document).ready(function () {
-    // Toggle Dark Mode
+    // Toggle Dark Mode and Light Mode
     $('#toggleMode').click(function () {
         $('body').toggleClass('dark-mode light-mode');
         $('.card').toggleClass('dark-mode light-mode');
         $('.navbar').toggleClass('navbar-light-mode navbar-dark-mode');
         // Update the text of the button based on the current mode
-        if ($('body').hasClass('dark-mode')) {
-            $('#toggleMode').text('Light Mode');
-        } else {
-            $('#toggleMode').text('Dark Mode');
-        }
+        var modeText = $('body').hasClass('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        $('#toggleMode').text(modeText);
     });
 
-    // Form Submission and Input Validation
+    // Check Quota Details
     $('#submitCekKuota').click(function (e) {
         e.preventDefault(); // Prevent the default form submission
         var msisdn = $('#msisdn').val();
-        // Check if the number is valid (example validation, adjust as needed)
+        // Validate the input number
         if (msisdn.length >= 10 && msisdn.length <= 16 && $.isNumeric(msisdn)) {
-            // Perform the quota check here
-            $('#hasilnya').text('Checking quota...');
-            // Simulate an API call with a timeout
-            setTimeout(function() {
-                $('#hasilnya').text('Quota details will be displayed here.');
-            }, 2000);
+            // Here you would make an AJAX call to your server to check the quota
+            // For demonstration, we'll just show a placeholder message
+            $('#hasilnya').text('Detail kuota akan ditampilkan di sini.');
         } else {
-            // Display an error message
-            $('#hasilnya').text('Please enter a valid XL number.');
+            // Display an error message if the number is not valid
+            $('#hasilnya').text('Silakan masukkan nomor XL yang valid.');
         }
     });
 });
